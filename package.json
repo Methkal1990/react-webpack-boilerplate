@@ -1,0 +1,77 @@
+{
+  "name": "new-relic-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.jsx",
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --open --mode development",
+    "test": "jest --detectOpenHandles --watchAll",
+    "lint": "npx eslint --ignore-path .gitignore --ext .jsx,.js src",
+    "format": "npx prettier --ignore-path .gitignore --write src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "browserslist": "^4.16.3",
+    "lodash": "^4.17.21",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.5.4",
+    "@babel/preset-env": "7.5.4",
+    "@babel/preset-react": "7.0.0",
+    "@wojtekmaj/enzyme-adapter-react-17": "^0.4.1",
+    "babel-loader": "8.0.6",
+    "css-loader": "3.0.0",
+    "enzyme": "^3.11.0",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.2.0",
+    "prettier": "^2.6.1",
+    "regenerator-runtime": "^0.13.7",
+    "style-loader": "0.23.1",
+    "webpack": "4.35.3",
+    "webpack-cli": "3.3.5",
+    "webpack-dev-server": "3.7.2"
+  },
+  "browserslist": {
+    "production": [
+      "last 2 Chrome versions",
+      "ie > 10",
+      "last 2 Firefox versions",
+      "last 2 Safari versions",
+      "last 2 Opera versions"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|scss|sass)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ]
+  }
+}
